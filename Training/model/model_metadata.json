@@ -1,0 +1,24 @@
+{
+    "features": [
+        "temperature",
+        "humidity"
+    ],
+    "temperature_classes": [
+        "ambiante",
+        "chaud",
+        "froid"
+    ],
+    "humidity_classes": [
+        "confortable",
+        "humide",
+        "sec"
+    ],
+    "scaler_mean": [
+        20.71672350293275,
+        69.39006956758969
+    ],
+    "scaler_scale": [
+        1.410401840370979,
+        3.115006887989956
+    ]
+}

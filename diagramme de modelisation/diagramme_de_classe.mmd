@@ -1,0 +1,49 @@
+classDiagram
+    class DHT22Sensor {
+        -sensorId: String
+        -type: String
+        +readTemperature() Float
+        +readHumidity() Float
+    }
+    
+    class ESP32Controller {
+        -deviceId: String
+        -connectedSensors: Sensor[]
+        +collectData() DataPoint
+        +sendData() void
+    }
+    
+    class DataPoint {
+        -timestamp: DateTime
+        -temperature: Float
+        -humidity: Float
+        +toJSON() String
+    }
+    
+    class DatabaseManager {
+        -connectionString: String
+        +saveData(DataPoint) void
+        +retrieveData() DataPoint[]
+    }
+    
+    class MLModel {
+        -modelType: String
+        -trainingData: DataPoint[]
+        +train() void
+        +predict(DataPoint) Float
+    }
+    
+    class UserInterface {
+        -currentUser: String
+        -displaySettings: Object
+        +showRealTimeData() void
+        +showHistoricalData() void
+        +setAlerts(Notification) void
+    }
+
+    ESP32Controller "1" *-- "1..*" DHT22Sensor : has
+    ESP32Controller ..> DataPoint : creates
+    DatabaseManager ..> DataPoint : manages
+    MLModel ..> DataPoint : uses
+    UserInterface ..> DatabaseManager : uses
+    UserInterface ..> MLModel : uses

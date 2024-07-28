@@ -1,0 +1,37 @@
+graph TD
+    A[ESP32 avec capteur DHT22] -->|Données brutes| B(Collecte de données)
+    B -->|JSON| C{Serveur Backend}
+    C -->|Stockage| D[(Base de données MongoDB)]
+    D -->|Extraction| E[Prétraitement des données]
+    E -->|Données nettoyées| F[Entraînement du modèle ML]
+    F -->|Modèle entraîné| G[Conversion en TensorFlow Lite]
+    G -->|Modèle TF Lite| H[Déploiement sur ESP32]
+    H -->|Prédictions| I[Interface utilisateur web]
+    C -->|API| I
+    D -->|Données historiques| I
+
+    subgraph "Auteur M'Crai Laydam"
+        A--> | | B
+    end
+
+    subgraph "Flux de données en temps réel"
+        A -->|Température & Humidité| H
+        H -->|Prédictions en temps réel| C
+    end
+
+    subgraph "Processus d'apprentissage"
+        D --> E --> F --> G
+    end
+
+    subgraph "Visualisation"
+        I -->|Affichage| J[Graphiques en temps réel]
+        I -->|Affichage| K[Rapports historiques]
+        I -->|Affichage| L[Notifiactions]
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#dfd,stroke:#333,stroke-width:2px
+    style F fill:#fdd,stroke:#333,stroke-width:2px
+    style H fill:#ffd,stroke:#333,stroke-width:2px
+    style I fill:#ddf,stroke:#333,stroke-width:2px
