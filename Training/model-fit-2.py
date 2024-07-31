@@ -8,8 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
 # Charger les données
-data = pd.read_csv('datasets/dataset.csv')  # Assurez-vous que le chemin du fichier est correct
-
+data = pd.read_csv('datasets/dataset.csv')  
 # Prétraitement des données
 X = data[['temperature', 'humidity']]
 y_temp = data['temperature_class']
