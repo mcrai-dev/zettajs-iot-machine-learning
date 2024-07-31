@@ -8,9 +8,9 @@ import joblib
 
 # 1. Chargement des données
 data = pd.read_csv('datasets/dataset.csv')
-X = data[['temperature', 'humidity']]
-y_temp = data['temperature_class']
-y_humid = data['humidity_class']
+X = data[['temperature', 'humidity']] #valeur numérique
+y_temp = data['temperature_class'] #variable catégorielle
+y_humid = data['humidity_class'] #variable catégorielle
 
 # 2. Prétraitement des données
 # Encodage des labels
