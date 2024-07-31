@@ -1,0 +1,27 @@
+{
+  "name": "iot-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard for Environment Humidity and Temperature, using prediction on machine learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcrai-dev/zettajs-iot-machine-learning.git"
+  },
+  "keywords": [
+    "Iot",
+    "zettajs",
+    "Machine",
+    "Learning",
+    "DHT22",
+    "environment"
+  ],
+  "author": "Mcrai Laydam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcrai-dev/zettajs-iot-machine-learning/issues"
+  },
+  "homepage": "https://github.com/mcrai-dev/zettajs-iot-machine-learning#readme"
+}
